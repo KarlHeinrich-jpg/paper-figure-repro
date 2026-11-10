@@ -3,7 +3,7 @@
 可复用的**论文插图复现**工具包：一套脚本同时覆盖**统计图配方**与**真实地理数据地图**，
 并强制记录“哪些是真实数据、哪些是模拟值”。
 
-- 20 个统计图脚本：SHAP 蜂巢/玫瑰/同心环、GeoShapley 条形+饼图、分裂小提琴、
+- 19 个统计图脚本：SHAP 蜂巢/玫瑰/同心环、GeoShapley 条形+饼图、分裂小提琴、
   Moran 散点、雨云图、极坐标年图、双轴时序、概念框架……
 - 6 个真实地理数据地图：郑州 / 上海 / 哈尔滨研究区、中国 DEM、高程×坡度双变量、
   上海 PM2.5 暴露。
@@ -23,7 +23,7 @@ cd paper-figure-repro
 python -m pip install -r requirements.txt
 
 python scripts/download_data.py        # ~450 MB，缓存到 geodata/
-python scripts/run_all.py --charts     # 20 张统计图
+python scripts/run_all.py --charts     # 19 张统计图
 python scripts/run_all.py --maps       # 6 张真实地图
 ```
 

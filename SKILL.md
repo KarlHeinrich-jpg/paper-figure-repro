@@ -29,7 +29,7 @@ git clone <this-repo> && cd paper-figure-repro
 python -m pip install -r requirements.txt
 
 python scripts/download_data.py          # 下载边界/DEM/PM2.5/人口/气候/土壤/土地覆盖
-python scripts/run_all.py --charts       # 20 张统计图（含 SHAP）
+python scripts/run_all.py --charts       # 19 张统计图（含 SHAP）
 python scripts/run_all.py --maps         # 6 张真实地理数据地图
 ```
 
@@ -164,7 +164,7 @@ paper-figure-repro/
 │  ├─ landuse.py         # WorldCover → 6 类
 │  ├─ download_data.py
 │  ├─ run_all.py
-│  ├─ charts/            # 20 个统计图脚本
+│  ├─ charts/            # 19 个统计图脚本
 │  └─ maps/              # 6 个真实地图脚本
 ├─ docs/
 │  ├─ figure_inventory.csv
