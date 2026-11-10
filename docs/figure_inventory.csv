@@ -1,0 +1,36 @@
+﻿id,article,paper_doi,image_ref,figure_type,verdict,script,output,note
+A01,art1,10.1038/s44454-026-00028-2,art1/02-06,多分类SHAP蜂巢图 + 内嵌玫瑰图 + 五层同心环,A,art1_shap_beeswarm_rose.py,art1_shap_beeswarm_rose_donut,CatBoost+TreeSHAP；CatBoost 可用，结构与配色已还原
+A02,art3,10.1016/j.eiar.2026.108402,art3/03,GeoShapley三效应堆叠条形 + 3个带影线饼图,A,eiar03_importance_bars_pies.py,eiar03_importance_bars_hatched_pies,6面板；百分比与原文一致，条长为模拟
+A03,art3,10.1016/j.eiar.2026.108393,art3/10,SHAP蜂巢图（因子族背景条）+ 8个依赖图（LOWESS+95%CI+R²）,A,eiar10_shap_beeswarm_dependence.py,eiar10_shap_beeswarm_dependence,CatBoostRegressor+SHAP；依赖图含趋势带
+A04,art3,10.1016/j.eiar.2026.108393,art3/08c & 09c,逐小时箱线图 + 均值折线（浓度/人口、暴露风险）,A,eiar08_hourly_boxplots.py,eiar08_hourly_boxplots,上方地图不复现，只复现c面板
+A05,art3,10.1016/j.eiar.2026.108344,art3/13d-e,按LISA类别的分裂小提琴（1980 vs 2020）+ 年份堆叠条形,A,eiar13_violin_stackedbar.py,eiar13_violin_stackedbar,seaborn split violin；a-c地图不复现
+A06,art3,10.1016/j.eiar.2026.108383,art3/15c,5个年份 × 4轮作系统的障碍度分组条形,A,eiar15_obstacle_degree_bars.py,eiar15_obstacle_degree_bars,地图与雷达小图不复现
+A07,art3,10.1016/j.eiar.2026.108409,art3/18b,双变量Moran散点（hexbin密度）+ 999次置换检验直方图,A,eiar18_bivariate_moran.py,eiar18_bivariate_moran,地图不复现
+A08,art3,10.1016/j.eiar.2026.108409,art3/19b,季节×8类冠层结构的雨云图/箱线 + 显著性字母,A,eiar19_raincloud_letters.py,eiar19_raincloud_letters,显著性字母为示意，非统计检验结果
+A09,art3,10.1016/j.eiar.2026.108409,art3/20,交互作用气泡矩阵（3季）+ 3×6依赖图,A,eiar20_bubble_matrix_dependence.py,eiar20_bubble_matrix_dependence,数值为模拟
+A10,art5,10.1016/j.eiar.2024.107721,art5/05,9个流域的双Y轴时序（连通性/核心区面积）+ 趋势带 + 年均虚线,A,eiar5_connectivity_timeseries.py,eiar5_connectivity_timeseries,斜率标注为示意
+A11,art5,10.1016/j.eiar.2024.107721,art5/06,9类土地覆盖的变化率发散条形（5个分箱）,A,eiar5_landcover_diverging_bars.py,eiar5_landcover_diverging_bars,分箱标签沿用原图
+A12,art6,10.1016/j.jclepro.2025.146675,art6/05 (Fig.8),10面板全国驱动因子时序小倍数,A,jcp8_driver_smallmultiples.py,jcp8_national_driver_smallmultiples,原图Fig.8
+A13,art6,10.1016/j.jclepro.2025.146675,art6/07 (Fig.10),9个农业区的极坐标“年份-影响强度”面板,A,jcp10_zone_polar_drivers.py,jcp10_zone_polar_drivers,原图Fig.10
+A14,art6,10.1016/j.jclepro.2025.146675,art6/06 (Fig.9),8个农业区Top5驱动因子条形 + 中国示意定位图,A (bars) / B (map),jcp9_region_bars_map.py,jcp9_region_bars_map,条形A；中心地图用真实省界+示意
+B01,art3,10.1016/j.eiar.2026.108402,art3/05,静态均质 vs 分阶段动态优先级的格网示意图,B+ (示意),eiar05_priority_grid.py,eiar05_priority_grid_schematic,无数据，属概念图，已按原拓扑重画
+B02,art3,10.1016/j.eiar.2026.108402,art3/01 & 02,GeoXAI四步框架 / BERT两阶段文本管线,B (示意),frameworks_montage.py,frameworks_montage,与art3/07、art6/02合并为一张框架拼图
+B03,art3,10.1016/j.eiar.2026.108393,art3/07,PM2.5暴露风险三步框架,B (示意),frameworks_montage.py,frameworks_montage,
+B04,art3,10.1016/j.eiar.2026.108409,art3/16,SCTZ同心环框架,B (示意),eiar16_sctz_framework.py,eiar16_sctz_framework,原图为定制插画，图标无法逐像素还原
+B05,art6,10.1016/j.jclepro.2025.146675,art6/02 (Fig.1),耕地碳排放概念框架,B (示意),frameworks_montage.py,frameworks_montage,
+B06,art3,10.1016/j.eiar.2026.108383,art3/14b,三个悬浮3D饼柱（2001/2010/2020）,B+ (几何模拟),eiar14_3d_pies.py,eiar14_3d_pies,matplotlib无原生3D饼图，用椭圆顶面+侧壁构造
+B07,art3,10.1016/j.eiar.2026.108402,art3/04,三阶段格网LISA类别地图 + 3个饼图,B (地图示意) / A (饼图),eiar04_grid_maps_pies.py,eiar04_grid_maps_pies,格网为合成，无郑州边界与PPFR格点
+B08,art3,10.1016/j.eiar.2026.108344,art3/11 & 12,中国DEM分级图 / 高程×坡度双变量图,B (模板),map_templates.py,map_templates,真实省界+合成栅格场
+B09,art3,108402/108393/108409,"art3/00, 06, 17",郑州/上海/哈尔滨研究区嵌套定位图,B (模板),map_templates.py,map_templates,需要城市/区县shp与底图，只有省界可用
+B10,art4,7篇（见README）,art4/00-13,7篇论文的研究区地图/土地利用图,B (模板) / C (精确),map_templates.py,map_templates,该文是“配色赏析”，图片主体均为地图；精确复现需原始shp/栅格
+B11,art5,10.1016/j.eiar.2024.107721,art5/01-04,方法框架图 + 4张连通性/变化地图,B (模板) / C (精确),map_templates.py,map_templates,地图依赖MSPA/Omniscape输出的300m栅格
+B12,art6,10.1016/j.jclepro.2025.146675,art6/03-04 (Fig.3-6),中国自然/社会因子分布图、变化率图、重心迁移图,B (模板) / C (精确),map_templates.py,map_templates,县域尺度2852个单元，无公开数据
+C01,art3,10.1016/j.eiar.2026.108409,art3/21,热情景识别与冠层优化方案（地图+定制3D插画）,C,-,-,含手绘景观插画，无法用matplotlib有意义地还原
+C02,art4,-,"art4/15-16, 18-21",配色提取网页截图、色卡条,N/A,-,-,并非论文图，属软件界面/色板展示
+C03,art2,-,-,ArcGIS国风配色广告（正文未加载）,N/A,-,-,不是论文，无图可复现
+R01,art3,10.1016/j.eiar.2026.108402,art3/00,郑州研究区：省/市/区三级定位 + 1km格网,A (真实地理数据),map_zhengzhou.py,art3_00_zhengzhou_real,DataV 12区县边界(GCJ→WGS84)+Esri浅灰底图；采样格网为中性参考格网
+R02,art3,10.1016/j.eiar.2026.108393,art3/06,上海研究区 + 土地利用分类图,A (真实地理数据),map_shanghai.py,art3_06_shanghai_real,DataV 16区边界+WorldCover 2021 10m土地覆盖；环路未画
+R03,art3,10.1016/j.eiar.2026.108409,art3/17,哈尔滨研究区：省/市/城区 + 卫星影像,A (真实地理数据),map_harbin.py,art3_17_harbin_real,DataV 18区县+Esri World Imagery+WorldCover树冠斑块；照片小图改为样方示意
+R04,art3,10.1016/j.eiar.2026.108344,art3/11,中国高程分级图（DEM+晕渲+省界+经纬网）,A (真实地理数据),map_china_dem.py,art3_11_china_dem_real,AWS/Mapzen DEM ~1.2km，GADM省界；山系标注为手工位置
+R05,art3,10.1016/j.eiar.2026.108344,art3/12,中国高程×坡度双变量图（3×3色阶+4个放大图）,A (真实地理数据),map_china_bivariate.py,art3_12_china_bivariate_real,同一DEM派生坡度；分级阈值为500/2000m与2°/10°
+R06,art3,10.1016/j.eiar.2026.108393,art3/08,上海PM2.5浓度与暴露风险逐时地图,A (真实空间+模拟小时),map_shanghai_pm25.py,art3_08_shanghai_pm25_real,CHAP 2020 1km PM2.5+WorldPop 2020 1km；小时变化为模拟

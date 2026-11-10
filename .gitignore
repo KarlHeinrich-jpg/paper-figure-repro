@@ -1,0 +1,12 @@
+geodata/
+outputs/
+_test_out/
+__pycache__/
+*.pyc
+*.part
+.DS_Store
+Thumbs.db
+*.tif
+*.nc
+*.zip
+catboost_info/
