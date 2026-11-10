@@ -16,14 +16,16 @@ from pyproj import Transformer
 import shapely
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from geo import mosaic, gadm, north_arrow, scalebar
+from geo import mosaic, gadm, taiwan, north_arrow, scalebar
 from common import setup_style, save
 
 setup_style()
 ALBERS = "+proj=aea +lat_1=25 +lat_2=47 +lat_0=0 +lon_0=105 +datum=WGS84 +units=m +no_defs"
 bbox = (73.0, 17.0, 136.0, 54.0)
 prov = gadm(1)
-china_geom = prov.geometry.union_all()
+tw = taiwan()
+china_geom = shapely.union_all([prov.geometry.union_all(),
+                                 tw.geometry.union_all()])
 
 elev, ext = mosaic("dem", 7, bbox, workers=12)
 h, w = elev.shape
@@ -76,9 +78,13 @@ shade = np.where(np.isnan(biv), 1.0, 0.72 + 0.38 * hs)
 ax.imshow(shade, extent=extent, origin="upper", cmap="gray", vmin=0, vmax=1,
           alpha=0.10, zorder=2)
 prov.to_crs(ALBERS).plot(ax=ax, facecolor="none", edgecolor="#FFFFFF", lw=0.45,
-                         alpha=0.9, zorder=3)
+                         alpha=0.85, zorder=3)
 prov.to_crs(ALBERS).plot(ax=ax, facecolor="none", edgecolor="#555555", lw=0.22,
-                         alpha=0.55, zorder=4)
+                         alpha=0.6, zorder=4)
+tw.to_crs(ALBERS).plot(ax=ax, facecolor="none", edgecolor="#FFFFFF", lw=0.45,
+                       alpha=0.9, zorder=3)
+tw.to_crs(ALBERS).plot(ax=ax, facecolor="none", edgecolor="#555555", lw=0.2,
+                       alpha=0.55, zorder=4)
 pb = prov.to_crs(ALBERS).total_bounds
 ax.set_xlim(pb[0] - 60000, pb[2] + 60000)
 ax.set_ylim(pb[1] - 60000, pb[3] + 60000)
@@ -139,6 +145,7 @@ for lon, lat, letter in zooms:
 # South China Sea inset
 axs = fig.add_axes([0.90, 0.135, 0.085, 0.11])
 prov.to_crs(4326).plot(ax=axs, facecolor="#EDEDED", edgecolor="#888888", lw=0.3)
+tw.to_crs(4326).plot(ax=axs, facecolor="#EDEDED", edgecolor="#888888", lw=0.3)
 axs.set_xlim(105, 125); axs.set_ylim(2, 24); axs.set_aspect("equal")
 axs.set_xticks([]); axs.set_yticks([]); axs.set_xlabel(""); axs.set_ylabel("")
 axs.add_patch(Rectangle((105, 2), 20, 22, fill=False, ec="#333333", lw=0.7))

@@ -293,3 +293,17 @@ def scalebar_deg(ax, bbox, km=2000, x=0.10, y=0.08, color="black"):
                           (1.0, f"{km:g} km", "left")]:
         ax.text(x0 + deg * frac, y0 + (N - S) * 0.014, txt, ha=ha, va="bottom",
                 fontsize=6.5, zorder=25)
+
+
+def taiwan():
+    """Taiwan province polygon (DataV 710000), WGS84."""
+    g = datav("100000")
+    tw = g[g["name"].astype(str).str.contains("台湾")]
+    return tw.to_crs(4326)
+
+
+def china_provinces():
+    """All DataV province polygons, including Taiwan / HK / Macao."""
+    g = datav("100000")
+    g = g[g["name"].astype(str).str.strip().ne("") & g.geometry.notna()]
+    return g.to_crs(4326)

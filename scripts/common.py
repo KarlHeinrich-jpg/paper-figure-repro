@@ -214,18 +214,12 @@ def raster_polygon(ax, verts, values, cmap, vmin=None, vmax=None, n=28, alpha=1.
 # real China boundary (local asset) with graceful fallback
 # --------------------------------------------------------------------------- #
 def china_gdf():
-    """Province polygons: local GADM 1, else download once via geo.gadm(1)."""
-    import geopandas as gpd
-    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    geo_dir = os.environ.get("PFR_GEODATA", os.path.join(root, "geodata"))
-    p = os.path.join(geo_dir, "gadm41_CHN_1.json")
-    if not os.path.exists(p):
-        try:
-            from geo import gadm
-            return gadm(1)
-        except Exception:
-            return None
-    return gpd.read_file(p)
+    """Province polygons including Taiwan, Hong Kong and Macao (DataV)."""
+    try:
+        from geo import china_provinces
+        return china_provinces()
+    except Exception:
+        return None
 
 
 def china_locator(ax, facecolor="#F4F6F8", edgecolor="#777777", lw=0.5):

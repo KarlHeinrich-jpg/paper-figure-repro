@@ -56,15 +56,10 @@ china.plot(ax=axc, facecolor="#F7F7F7", edgecolor="#AAAAAA", lw=0.35, zorder=2)
 henan.plot(ax=axc, facecolor="#D62728", edgecolor="#D62728", lw=0.2, zorder=3)
 axc.set_xlim(72, 136); axc.set_ylim(17, 55)
 axc.set_aspect("equal"); axc.axis("off"); axc.set_xlabel(""); axc.set_ylabel("")
-axc.text(73.5, 52.5, "China", fontsize=13, fontweight="bold")
-north_arrow(axc, x=0.10, y=0.80, size=0.05)
+axc.text(74.0, 53.6, "China", fontsize=13, fontweight="bold")
+north_arrow(axc, x=0.10, y=0.70, size=0.05)
 scalebar_deg(axc, (72, 17, 136, 55), km=3000, x=0.10, y=0.08)
 # south china sea inset
-axs = axc.inset_axes([0.70, 0.02, 0.28, 0.30])
-china.plot(ax=axs, facecolor="#F2F2F2", edgecolor="#888888", lw=0.3)
-axs.set_xlim(105, 125); axs.set_ylim(2, 24)
-axs.set_aspect("equal"); axs.set_xticks([]); axs.set_yticks([]); axs.set_xlabel(""); axs.set_ylabel("")
-axs.add_patch(plt.Rectangle((105, 2), 20, 22, fill=False, ec="#555555", lw=0.6))
 
 # --------------------------------------------------------------------------- #
 # (left-bottom) Henan
